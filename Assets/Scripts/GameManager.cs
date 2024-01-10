@@ -5,6 +5,7 @@ using System.Diagnostics;
 using FMOD.Studio;
 using FMODUnity;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -38,6 +39,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _questText;
     public List<string> items;
 
+    [Header("Pause")] [SerializeField] private GameObject _pauseUI;
+    private bool _isPaused = false;
+
 
     private void Awake()
     {
@@ -47,11 +51,47 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ShowInteractUI(false);
+        _pauseUI.SetActive(false);
 
         _musicEventInstance = RuntimeManager.CreateInstance(_musicEventReference);
         _musicEventInstance.start();
         _musicEventInstance.setParameterByName("MusicStage", value: 2);
     }
+
+    private void OnEnable()
+    {
+        _playerInput.actions.FindActionMap("Player").FindAction("Pause").performed += PauseAction;
+        _playerInput.actions.FindActionMap("UI").FindAction("Pause").performed += PauseAction;
+    }
+
+    private void OnDisable()
+    {
+        if (_playerInput  == null){return;}
+        
+        _playerInput.actions.FindActionMap("Player").FindAction("Pause").performed -= PauseAction;
+        _playerInput.actions.FindActionMap("UI").FindAction("Pause").performed -= PauseAction;
+    }
+
+    private void PauseAction(InputAction.CallbackContext obj)
+    {
+        TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        _isPaused = !_isPaused;
+        _pauseUI.SetActive(_isPaused);
+        
+        if (_isPaused)
+        {
+            _playerInput.SwitchCurrentActionMap("UI");
+        }
+        else
+        {
+            _playerInput.SwitchCurrentActionMap("Player");
+        }
+    }
+    
 
     public void ShowInteractUI(bool show)
     {

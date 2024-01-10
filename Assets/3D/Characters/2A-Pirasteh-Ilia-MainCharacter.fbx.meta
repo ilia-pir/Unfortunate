@@ -12,7 +12,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleCurves: 0
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
@@ -23,8 +23,8 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
-    animationCompression: 1
+    importConstraints: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -654,7 +654,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -670,28 +670,28 @@ ModelImporter:
         functionName: PlayFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 8
         intParameter: 0
         messageOptions: 0
       - time: 0.40623665
         functionName: PlayFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 8
         intParameter: 0
         messageOptions: 0
       - time: 0.6830357
         functionName: PlayFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 8
         intParameter: 0
         messageOptions: 0
       - time: 0.90625
         functionName: PlayFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 8
         intParameter: 0
         messageOptions: 0
       transformMask: []
@@ -711,7 +711,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -727,7 +727,7 @@ ModelImporter:
         functionName: PlayFootstep
         data: 
         objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
+        floatParameter: 4
         intParameter: 0
         messageOptions: 0
       transformMask: []

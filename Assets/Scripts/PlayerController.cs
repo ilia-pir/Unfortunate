@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 10f;
     public float minTurnSpeed = 0.3f;
     public float turnSpeed = 5f;
+    public float acceleration = 0.1f;
+    
     
     private PlayerInput _playerInput;
     private InputAction _moveAction;
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
         {
             speed = 0.0f;
         }
-        _animator.SetFloat(name:"Speed", speed);
+        _animator.SetFloat(name:"Speed", speed, acceleration,Time.deltaTime);
 
 
     }
