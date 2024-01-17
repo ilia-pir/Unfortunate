@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     private Transform _camTransform;
     private Animator _animator;
     
-    [SerializeField]
-    private Interactable _CurrentInteractable;
+   
+    public Interactable currentInteractable;
     
     void Start()
     {
@@ -94,9 +94,9 @@ public class PlayerController : MonoBehaviour
 
     void Interact(InputAction.CallbackContext obj)
     {
-        if (_CurrentInteractable == null){ return;}
+        if (currentInteractable == null){ return;}
         
-        _CurrentInteractable.onInteract.Invoke();
+        currentInteractable.onInteract.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
        Interactable collidedInteractable = other.GetComponent<Interactable>();
        if (collidedInteractable == null) { return;}
 
-       _CurrentInteractable = collidedInteractable;
+       currentInteractable = collidedInteractable;
        GameManager.instance.ShowInteractUI(true);
     }
     private void OnTriggerExit(Collider other)
@@ -114,9 +114,9 @@ public class PlayerController : MonoBehaviour
         
         Interactable collidedInteractable = other.GetComponent<Interactable>();
         
-        if (_CurrentInteractable == null) {return;}
+        if (currentInteractable == null) {return;}
 
-        _CurrentInteractable = null;
+        currentInteractable = null;
 GameManager.instance.ShowInteractUI(false);
         
     }

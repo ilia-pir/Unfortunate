@@ -8,15 +8,18 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 using Cursor = UnityEngine.Cursor;
 using Debug = UnityEngine.Debug;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public PlayerController player;
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private EventReference _musicEventReference;
     private EventInstance _musicEventInstance;
@@ -39,7 +42,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _questText;
     public List<string> items;
 
-    [Header("Pause")] [SerializeField] private GameObject _pauseUI;
+    [Header("Pause")]
+    [SerializeField] private GameObject _pauseUI;
+    [SerializeField] private Button _pausefocus;
     private bool _isPaused = false;
 
 
@@ -79,17 +84,34 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause()
     {
+        if(inDialogue){return;}
+        
         _isPaused = !_isPaused;
         _pauseUI.SetActive(_isPaused);
         
         if (_isPaused)
         {
             _playerInput.SwitchCurrentActionMap("UI");
+            Time.timeScale = 0.0f;
+            Cursor.lockState = CursorLockMode.Confined;
+            _pausefocus.Select();
         }
         else
         {
             _playerInput.SwitchCurrentActionMap("Player");
+            Time.timeScale = 1.0f;
+            Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    public void QuittoTitle()
+    {
+        _playerInput.actions.FindActionMap("Player").FindAction("Pause").performed -= PauseAction;
+        _playerInput.actions.FindActionMap("UI").FindAction("Pause").performed -= PauseAction;
+        Time.timeScale = 1.0f;
+        _musicEventInstance.release();
+        _musicEventInstance.stop(STOP_MODE.IMMEDIATE);
+        SceneManager.LoadScene("Scenes/StartScreen");
     }
     
 
@@ -136,6 +158,10 @@ public class GameManager : MonoBehaviour
         }
 
         ClearDialogueButtons();
+        if (player.currentInteractable != null)
+        {
+            ShowInteractUI(true);
+        }
 
         foreach (DialogueLineButton button in dialogueline.buttons)
         {
