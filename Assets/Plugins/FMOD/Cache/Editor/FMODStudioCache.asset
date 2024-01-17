@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8989199391698046261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/f.mod/FMOD_Banks/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638398696207060823
-  FileSizes:
-  - Name: 
-    Value: 1136
-  Exists: 1
 --- !u!114 &-8148414850900216932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,7 +19,7 @@ MonoBehaviour:
     Data3: 509523901
     Data4: -914652693
   Banks:
-  - {fileID: -6129475327334225648}
+  - {fileID: -6434360557088255063}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -47,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 147240
---- !u!114 &-6129475327334225648
+--- !u!114 &-6434360557088255063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,11 +39,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: Assets/f.mod/FMOD_Banks/Master.bank
+  Path: C:/Users/htk/Downloads/QuestGameFMOD/QuestGameFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638398696206738354
-  FileSizes: []
+  lastModified: 638411035434371873
+  FileSizes:
+  - Name: Desktop
+    Value: 4412736
   Exists: 1
 --- !u!114 &-4918019938727263572
 MonoBehaviour:
@@ -84,14 +66,14 @@ MonoBehaviour:
     Data3: -1086621763
     Data4: -1186082744
   Banks:
-  - {fileID: -6129475327334225648}
+  - {fileID: -6434360557088255063}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 296
+  Length: 352
 --- !u!114 &-3374624352134847402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +93,7 @@ MonoBehaviour:
     Data3: 518989213
     Data4: -1290906020
   Banks:
-  - {fileID: -6129475327334225648}
+  - {fileID: -6434360557088255063}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -119,7 +101,7 @@ MonoBehaviour:
   - {fileID: -2424897293554506281}
   MinDistance: 1
   MaxDistance: 20
-  Length: 246432
+  Length: 130588
 --- !u!114 &-2424897293554506281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +145,7 @@ MonoBehaviour:
     Data3: -1432669004
     Data4: -1839213430
   Banks:
-  - {fileID: -6129475327334225648}
+  - {fileID: -6434360557088255063}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -184,8 +166,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8989199391698046261}
-  - {fileID: -6129475327334225648}
+  - {fileID: 8203853435817605608}
+  - {fileID: -6434360557088255063}
   EditorEvents:
   - {fileID: -8148414850900216932}
   - {fileID: -4918019938727263572}
@@ -193,8 +175,28 @@ MonoBehaviour:
   - {fileID: -3374624352134847402}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6129475327334225648}
+  - {fileID: -6434360557088255063}
   StringsBanks:
-  - {fileID: -8989199391698046261}
-  cacheTime: 638398696207060823
+  - {fileID: 8203853435817605608}
+  cacheTime: 638411035434386938
   cacheVersion: 131609
+--- !u!114 &8203853435817605608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/htk/Downloads/QuestGameFMOD/QuestGameFMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638411035434386938
+  FileSizes:
+  - Name: Desktop
+    Value: 1136
+  Exists: 1
