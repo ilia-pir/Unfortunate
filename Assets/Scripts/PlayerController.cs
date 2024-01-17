@@ -95,6 +95,11 @@ public class PlayerController : MonoBehaviour
     void Interact(InputAction.CallbackContext obj)
     {
         if (currentInteractable == null){ return;}
+
+        if (currentInteractable.interactAnimation != "")
+        {
+            _animator.Play(currentInteractable.interactAnimation);
+        }
         
         currentInteractable.onInteract.Invoke();
     }

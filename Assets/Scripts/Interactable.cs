@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+    public string interactAnimation;
     public UnityEvent onInteract;
 
     private void OnDisable()
