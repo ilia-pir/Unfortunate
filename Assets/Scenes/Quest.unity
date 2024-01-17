@@ -14954,7 +14954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262831556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23997656, y: -0.000000018675175, z: 0.0000000046165045, w: 0.9707787}
+  m_LocalRotation: {x: 0.23997656, y: 0.000000018675175, z: -0.0000000046165045, w: 0.9707787}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27907,7 +27907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145847197a4d51a4abe74ff2494e8189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1107350610}
   _playerInput: {fileID: 920029123}
   _musicEventReference:
     Guid:
@@ -51217,7 +51217,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1876120884}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1107350608}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -62933,6 +62933,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.496408, y: 2.4964073, z: 2.414403}
   m_Center: {x: 0.0000076293945, y: 0.0000076293945, z: 0}
+--- !u!1 &1107350608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3208248758518788747, guid: 3a5fdae3e3ce0474fba555c3af4e34a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1876120884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1107350610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2086695118215479013, guid: 3a5fdae3e3ce0474fba555c3af4e34a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1876120884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107350608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d60bd19355be3744a1eb15424c9c951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1108761865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74826,6 +74844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cbf2034f4aa8b4bbe245258502ba19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactAnimation: 
   onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -78242,6 +78261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cbf2034f4aa8b4bbe245258502ba19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactAnimation: 
   onInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -117009,6 +117029,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: interactAnimation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1107350608}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598805348320301319, guid: 985102e027481eb45a0cd9ade87b7a46,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6000970439117145730, guid: 985102e027481eb45a0cd9ade87b7a46,
         type: 3}
